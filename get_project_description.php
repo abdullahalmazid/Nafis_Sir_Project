@@ -7,7 +7,7 @@ $database = "railway";
 $port = 31433;
 
 $conn = new mysqli($host, $username, $password, $database, $port);
-
+$conn->set_charset("utf8mb4");
 // Check connection
 if ($conn->connect_error) {
   die(json_encode(['error' => 'Database connection failed: ' . $conn->connect_error]));
