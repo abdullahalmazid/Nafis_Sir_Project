@@ -44,7 +44,7 @@ if (!in_array($group_name, $valid_groups)) {
 
 $timestamp = date('Y-m-d H:i:s');
 
-$stmt = $conn->prepare("INSERT INTO sensor_data (sensor_name, sensor_value, group_no, timestamp) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO sensor_data (SENSOR_NAME, SENSOR_VALUE, GROUP_NO, TIMESTAMP) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sdss", $sensor_id, $data_value, $group_name, $timestamp);
 
 if ($stmt->execute()) {
