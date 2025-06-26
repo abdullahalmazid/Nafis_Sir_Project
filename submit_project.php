@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost";
+$host = "mainline.proxy.rlwy.net";
 $username = "root";
-$password = ""; // leave empty if you didn’t set a password
-$dbname = "sensor_data_db";
+$password = "CySixRqWwmDBCgpFIwrWuTUSzoDMTSyQ";
+$database = "railway";
+$port = 31433;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $database, $port);
 
 // Check connection
 if ($conn->connect_error) {
