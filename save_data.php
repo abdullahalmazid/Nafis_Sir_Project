@@ -1,12 +1,13 @@
 <?php
 
 
-$host = "localhost";
+$host = "mainline.proxy.rlwy.net";
 $username = "root";
-$password = "";
-$database = "sensor_data_db";
+$password = "CySixRqWwmDBCgpFIwrWuTUSzoDMTSyQ";
+$database = "railway";
+$port = 31433;
 
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $database, $port);
 
 if ($conn->connect_error) {
     http_response_code(500);
