@@ -1,0 +1,312 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #859ca2;
+}
+#header {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+#sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1a1e20;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  z-index: 100;
+  position: absolute; /* Ensure it's relative for absolute button positioning */
+  transition: background-color 0.99s ease;
+}
+
+#sidebar.hidden {
+  left: -220px; /* Hide sidebar by moving it off-screen */
+}
+#sidebar button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #057683;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#sidebar button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(117, 120, 123, 0.5);
+  background-color: #abc3e0; /* Darker shade on focus */
+  transition: background-color 0.1s ease;
+}
+
+#sidebar h2 {
+  font-size: 18px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  text-align: center;
+  color: #f8f9fa;
+}
+
+#sidebar button:hover {
+  background-color: #9cabbe;
+  
+
+}
+#data-container {
+  margin-left: 320px;
+  padding: 25px;
+  transition: margin-left 0.5s yease;
+}
+
+#data-table {
+  max-height: 500px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+table tr:nth-child(even) {
+  background-color: #d4eff6;
+}
+table tr:hover {
+  background-color: #e8c2c2;
+}
+
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+#info-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #383e43;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#info-button:hover {
+  background-color: #4a6f9c;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+#info-button:active {
+  transform: scale(0.95);
+}
+#info-popup {
+  position: fixed;
+  bottom: 60px;
+  right: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  display: none;
+  z-index: 1000;
+  max-width: 300px;
+  white-space: normal;
+  transition: background-color 0.49s ease;
+}
+#info-popup:hover {
+  background-color: #f0f0f0;
+  
+  font-size: 14px;
+  line-height: 1.5;
+}
+#info-popup h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Highlight active sensor button */
+#sensor-list button.active-sensor {
+  background-color: #533a39;  /* green highlight */
+  color: rgb(248, 227, 227);
+  font-weight: bold;
+  box-shadow: 0 0 8px #6157c8;
+  transition: background-color 0.39s ease;
+}
+#toggle-sidebar-btn {
+  position: fixed;
+  top: 3px;
+  left: 210px;
+  padding: 2px 6px;
+  font-size: 18px;
+  z-index: 1001;
+  background-color: #bed4ef1a;
+  color: rgb(20, 20, 20);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(202, 167, 167, 0.1);
+}
+
+#toggle-sidebar-btn:hover {
+  background-color: #a8acb1;
+}
+#toggle-sidebar-btn:active {
+  transform: scale(0.97);
+}
+#group-select {
+  padding: 8px 12px;
+  border: 2px solid #bedcfc; /* blue border */
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #d6e2ec; /* light background */
+  color: #000000;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  text-align: center;
+  display: block; /* Make it a block element for full width */
+  position: relative; /* Position relative for absolute positioning of options */
+  
+}
+
+#group-select:hover {
+  border-color: #c05d3a;
+  box-shadow: 0 0 5px rgba(239, 127, 129, 0.5);
+}
+#group-select:focus {
+  border-color: #c05d3a; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(239, 127, 129, 0.5); /* Add shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Project Button + Submit Link Row */
+.project-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* View Project Button */
+#project-button {
+  padding: 8px 16px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+#project-button:hover {
+  background-color: #004a99;
+}
+
+/* Submit Project Link */
+.submit-project-link {
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.submit-project-link:hover {
+  background-color: #1e7e34;
+}
+/* Data Table Header */
+.data-title {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+/* Modal container */
+#projectModal {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Modal content scrollable */
+#projectContent {
+  white-space: pre-wrap;
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Leave space for title and close button */
+  padding-right: 10px;
+}
+
+/* Backdrop */
+#modalBackdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Close button */
+.close-button {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Modal title */
+.modal-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}

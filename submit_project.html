@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Project</title>
+  <link rel="stylesheet" href="submit_project.css">
+</head>
+<body>
+  <h2>Submit Your Group Project Info</h2>
+  <form action="submit_project.php" method="POST">
+
+    <!-- Group Name Dropdown -->
+    <label for="group_name">Group Name:</label><br>
+<select id="group_name" name="group_name" required>
+  <option value="">-- Select a Group --</option>
+  <optgroup label="Section A">
+    <option value="A1">Group A1</option>
+    <option value="A2">Group A2</option>
+    <option value="A3">Group A3</option>
+    <option value="A4">Group A4</option>
+    <option value="A5">Group A5</option>
+    <option value="A6">Group A6</option>
+    <option value="A7">Group A7</option>
+    <option value="A8">Group A8</option>
+    <option value="A9">Group A9</option>
+    <option value="A10">Group A10</option>
+    <option value="A11">Group A11</option>
+    <option value="A12">Group A12</option>
+  </optgroup>
+  <optgroup label="Section B">
+    <option value="B1">Group B1</option>
+    <option value="B2">Group B2</option>
+    <option value="B3">Group B3</option>
+    <option value="B4">Group B4</option>
+    <option value="B5">Group B5</option>
+    <option value="B6">Group B6</option>
+    <option value="B7">Group B7</option>
+    <option value="B8">Group B8</option>
+    <option value="B9">Group B9</option>
+    <option value="B10">Group B10</option>
+    <option value="B11">Group B11</option>
+    <option value="B12">Group B12</option>
+  </optgroup>
+</select><br><br>
+
+
+    <!-- Group Members -->
+    <label for="group_members">Group Members (comma-separated):</label><br>
+    <input type="text" id="group_members" name="group_members" required><br><br>
+    
+    <!-- Project Title -->
+    <label for="project_title">Project Title:</label><br>
+    <input type="text" id="project_title" name="project_title" required><br><br>
+
+    <!-- Problem Statement -->
+    <label for="problem_statement">Problem Statement:</label><br>
+    <input type="text" id="problem_statement" name="problem_statement" required><br><br>
+
+    <!-- Sensor Name -->
+    <label for="sensor_name">Sensor Name:</label><br>
+    <input type="text" id="sensor_name" name="sensor_name" required><br><br>
+
+    <!-- Actuator Name -->
+    <label for="actuator_name">Actuator Name:</label><br>
+    <input type="text" id="actuator_name" name="actuator_name" required><br><br>
+
+    
+
+    <!-- Project Description -->
+    <label for="project_description">Project Description:</label><br>
+    <textarea id="project_description" name="project_description" required></textarea><br><br>
+
+    <!-- Submit -->
+    <input type="submit" value="Submit Project">
+  </form>
+</body>
+</html>

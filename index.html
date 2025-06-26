@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Sensor Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+
+
+  <!-- Sidebar toggle button -->
+  <button id="toggle-sidebar-btn" >✖</button>
+
+  
+  
+  <!-- Info Button -->
+  <button id="info-button" title="About">i</button>
+  <div id="info-popup">
+    <p style="margin: 0;">
+      <strong style="font-size: 16px;">Created by: Abdullah Al Mazid</strong><br>
+      <strong>Student ID:</strong> 2008080<br>
+      
+      <strong>Department:</strong> Industrial and Production Engineering<br>
+      <strong>Course:</strong> IPE-419 – Computer Integrated Manufacturing<br>
+      <strong>Project:</strong> Sensor Data Dashboard<br>
+      <strong>Course Teacher:</strong> Dr. Nafis Ahmed<br>
+      Bangladesh University of Engineering and Technology (BUET)
+    </p>
+  </div>
+
+  
+  
+  <!-- Sidebar -->
+  <div id = "sidebar">
+    <label for="group-select" style="margin: 0 0 10px 55px; font-style: oblique; font-weight: bold; display: inline-block; color: rgb(255, 255, 255);">
+      Select Group:
+    </label>
+    <select id="group-select" onchange="onGroupChange()">
+  <option value="">-- Select a Group --</option>
+
+  <optgroup label="Section A">
+    <option value="A1">Group A1</option>
+    <option value="A2">Group A2</option>
+    <option value="A3">Group A3</option>
+    <option value="A4">Group A4</option>
+    <option value="A5">Group A5</option>
+    <option value="A6">Group A6</option>
+    <option value="A7">Group A7</option>
+    <option value="A8">Group A8</option>
+    <option value="A9">Group A9</option>
+    <option value="A10">Group A10</option>
+    <option value="A11">Group A11</option>
+    <option value="A12">Group A12</option>
+  </optgroup>
+
+  <optgroup label="Section B">
+    <option value="B1">Group B1</option>
+    <option value="B2">Group B2</option>
+    <option value="B3">Group B3</option>
+    <option value="B4">Group B4</option>
+    <option value="B5">Group B5</option>
+    <option value="B6">Group B6</option>
+    <option value="B7">Group B7</option>
+    <option value="B8">Group B8</option>
+    <option value="B9">Group B9</option>
+    <option value="B10">Group B10</option>
+    <option value="B11">Group B11</option>
+    <option value="B12">Group B12</option>
+  </optgroup>
+    </select>
+
+
+    <h2 style="font: bold; color: rgb(255, 255, 255); font-style: oblique; border: 0cap;">Sensor Dashboard</h2>
+    
+    <div id="sensor-list">
+      <button id="groupDataBtn" onclick="loadGroupData(this)">Show Group Data</button>
+
+      <button onclick="loadSensorData('temperature_sensor', this)">Temperature</button>
+      <button onclick="loadSensorData('pressure_sensor', this)">Pressure</button>
+      <button onclick="loadSensorData('humidity_sensor', this)">Humidity</button>
+      <button onclick="loadSensorData('proximity_sensor', this)">Proximity</button>
+      <button onclick="loadSensorData('light_sensor', this)">Light</button>
+      <button onclick="loadSensorData('motion_sensor', this)">Motion</button>
+      <button onclick="loadSensorData('gas_sensor', this)">Gas</button>
+      <button onclick="loadSensorData('vibration_sensor', this)">Vibration</button>
+      <button onclick="loadSensorData('sound_sensor', this)">Sound</button>
+      <button onclick="loadSensorData('water_level_sensor', this)">Water Level</button>
+      <button onclick="loadSensorData('air_quality_sensor', this)">Air Quality</button>
+      <button onclick="loadSensorData('soil_moisture_sensor', this)">Soil Moisture</button>
+      <button onclick="loadSensorData('ultrasonic_sensor', this)">Ultrasonic</button>
+      <button onclick="loadSensorData('infrared_sensor', this)">Infrared</button>
+      <button onclick="loadSensorData('magnetic_sensor', this)">Magnetic</button>
+      <button onclick="loadSensorData('gyroscope_sensor', this)">Gyroscope</button>
+      <button onclick="loadSensorData('accelerometer_sensor', this)">Accelerometer</button>
+      <button onclick="loadSensorData('compass_sensor', this)">Compass</button>
+      <button onclick="loadSensorData('pH_sensor', this)">pH</button>
+      <button onclick="loadSensorData('gps_sensor', this)">GPS</button>
+      <button onclick="loadSensorData('wind_speed_sensor', this)">Wind Speed</button>
+      <button onclick="loadSensorData('rainfall_sensor', this)">Rainfall</button>
+      <button onclick="loadSensorData('UV_sensor', this)">UV</button>
+      <button onclick="loadSensorData('CO2_sensor', this)">CO₂</button>
+      <button onclick="loadSensorData('O2_sensor', this)">O₂</button>
+      <button onclick="loadSensorData('NO2_sensor', this)">NO₂</button>
+      <button onclick="loadSensorData('SO2_sensor', this)">SO₂</button>
+      <button onclick="loadSensorData('PM25_sensor', this)">PM2.5</button>
+      <button onclick="loadSensorData('PM10_sensor', this)">PM10</button>
+      <button onclick="loadSensorData('light_intensity_sensor', this)">Light Intensity</button>
+      <button onclick="loadSensorData('noise_level_sensor', this)">Noise Level</button>
+      <button onclick="loadSensorData('battery_voltage_sensor', this)">Battery Voltage</button>
+      <button onclick="loadSensorData('current_sensor', this)">Current</button>
+      <button onclick="loadSensorData('voltage_sensor', this)">Voltage</button>
+      <button onclick="loadSensorData('frequency_sensor', this)">Frequency</button>
+      <button onclick="loadSensorData('power_sensor', this)">Power</button>
+      <button onclick="loadSensorData('energy_sensor', this)">Energy</button>
+      <button onclick="loadSensorData('resistance_sensor', this)">Resistance</button>
+      <button onclick="loadSensorData('capacitance_sensor', this)">Capacitance</button>
+      <button onclick="loadSensorData('inductance_sensor', this)">Inductance</button>
+      <button onclick="loadSensorData('temperature_humidity_sensor', this)">Temperature & Humidity</button>
+      <button onclick="loadSensorData('pressure_altitude_sensor', this)">Pressure & Altitude</button>
+      <button onclick="loadSensorData('water_quality_sensor', this)">Water Quality</button>
+      <button onclick="loadSensorData('flow_rate_sensor', this)">Flow Rate</button>
+      <button onclick="loadSensorData('level_sensor', this)">Level</button>
+      <button onclick="loadSensorData('vibration_frequency_sensor', this)">Vibration Frequency</button>
+      <button onclick="loadSensorData('torque_sensor', this)">Torque</button>
+      <button onclick="loadSensorData('strain_sensor', this)">Strain</button>
+      <button onclick="loadSensorData('force_sensor', this)">Force</button>
+      <button onclick="loadSensorData('displacement_sensor', this)">Displacement</button>
+      <button onclick="loadSensorData('position_sensor', this)">Position</button>
+      <button onclick="loadSensorData('speed_sensor', this)">Speed</button>
+      <button onclick="loadSensorData('acceleration_sensor', this)">Acceleration</button>
+      <button onclick="loadSensorData('tilt_sensor', this)">Tilt</button>
+      <button onclick="loadSensorData('angle_sensor', this)">Angle</button>
+
+    </div>
+  </div>
+
+  <!-- Main content -->
+  
+<div id="data-container">
+
+  <!-- Project Description Button -->
+  <div class="project-controls">
+    <button id="project-button" title="Show Project Description" onclick="showProjectDescription()">📄 View Project</button>
+
+    <a href="submit_project.html" class="submit-project-link" title="Submit Your Project Info">📝 Submit Project</a>
+  </div>
+
+  <h3 class="data-title">Sensor Data</h3>
+
+  <!-- Data Table Container -->
+  <div id="data-table">Select a sensor to see data.</div>
+
+</div>
+
+  
+  
+  
+  <!-- Project Description popup -->
+  
+  <!-- Modal Container -->
+<div id="projectModal">
+  <span class="close-button" onclick="closeModal()">✖</span>
+  <h3 class="modal-title">Project Description</h3>
+  <div id="projectContent"></div>
+</div>
+
+<!-- Backdrop -->
+<div id="modalBackdrop" onclick="closeModal()"></div>
+  
+  
+ 
+  
+  
+
+  
+  
+  <script src="dashboard.js"></script>
+
+
+</body>
+</html>
