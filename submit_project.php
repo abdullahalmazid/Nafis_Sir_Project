@@ -6,12 +6,12 @@ $database = "railway";
 $port = 31433;
 
 $conn = new mysqli($host, $username, $password, $database, $port);
-$conn->set_charset("utf8mb4");
+
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+$conn->set_charset("utf8mb4");
 // Collect form data safely
 $group_name = $_POST['group_name'];
 $group_members = $_POST['group_members'];
